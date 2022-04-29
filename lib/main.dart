@@ -117,7 +117,8 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: HomePage()));
+  runApp(MaterialApp(
+      home: HomePage(), theme: ThemeData(primarySwatch: Colors.purple)));
 }
 
 class HomePage extends StatelessWidget {
@@ -125,9 +126,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.brown,
-      child: Text("Hello world"),
-    );
+    return Scaffold(
+        appBar: AppBar(title: Text("Hello world app")),
+        body: Container(
+          child: Text("Hi Flutter!"),
+        ));
   }
 }
