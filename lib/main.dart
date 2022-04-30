@@ -129,28 +129,38 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Hello world app")),
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          mainAxisSize: MainAxisSize.max,
+        child: Container(
+          color: Colors.blue,
+          width: 100,
+          height: 100,
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
           children: <Widget>[
-            Container(
-              color: Colors.red,
-              width: 100,
-              height: 100,
+            UserAccountsDrawerHeader(
+              accountName: Text("Benali Mouad"),
+              accountEmail: Text("mouadbnl.2k01@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"),
+              ),
             ),
-            Container(
-              color: Colors.green,
-              width: 100,
-              height: 100,
-            ),
-            Container(
-              color: Colors.blue,
-              width: 100,
-              height: 100,
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Manage users"),
+              subtitle: Text("here u can manage your users"),
+              onTap: () => {},
             ),
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => {},
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
