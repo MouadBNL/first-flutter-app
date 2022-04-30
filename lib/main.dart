@@ -127,29 +127,30 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Hello world app")),
-        body: Center(
-          child: Container(
-              padding: const EdgeInsets.all(5),
-              clipBehavior: Clip.antiAlias,
-              height: 200,
-              width: 200,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 20,
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
-              child: const Text(
-                "I am a container",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-              )),
-        ));
+      appBar: AppBar(title: const Text("Hello world app")),
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Container(
+              color: Colors.red,
+              width: 100,
+              height: 100,
+            ),
+            Container(
+              color: Colors.green,
+              width: 100,
+              height: 100,
+            ),
+            Container(
+              color: Colors.blue,
+              width: 100,
+              height: 100,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
